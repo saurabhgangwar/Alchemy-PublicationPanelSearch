@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.alchemywebstore.com/">
+  <description><![CDATA[The plugin places a search box above the publication list in the left panel. 
+  This is a responsive search and operates over the DOM for the publication list.
+  ]]></description>
+  <name>PublicationPanelSearch</name>
+  <version>1.0.0.0</version>
+  <settings>
+  </settings>
+</plugin>
