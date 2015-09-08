@@ -37,17 +37,20 @@
             $JQ(treeDocumentHeadElement).append('<link rel="stylesheet" href="${CssUrl}Style.css" type="text/css" />');
 
             // Search HTML template 
-            var searchTemplate = "<div style=\"width: 100%\"><input id=\"AlchemyPublicationSearchTextBox\" type='text' placeholder='Search...'></div>";
+            var searchTemplate = "<div class=\"alchemyPublicationSearchBox\"><input id=\"AlchemyPublicationSearchTextBox\" type='text' placeholder='Search...'></div>";
 
             // Get the element having "children" class of the tree control. This element have the publications child elements.
             var childDiv = treeControlElement.getElementsByClassName("children")[0];
 
             var nodePublicationElements = childDiv.getElementsByClassName("node");
 
+            var searchBoxDiv = treeControlElement.getElementsByClassName("alchemyPublicationSearchBox");
+
             // Check if children element exist
             if (childDiv != undefined) {
                 // Show search box only when publications are present to search
-                if (nodePublicationElements.length > 0) {
+                // and search box is not already present
+                if (nodePublicationElements.length > 0 && searchBoxDiv.length < 1) {
                     // Apply the sieve function to the children element.
                     // Set the content searchable under the DIVs having "node" class.
                     $JQ(childDiv).sieve({ searchTemplate: searchTemplate, itemSelector: "div.node" });
