@@ -53,7 +53,7 @@
                 if (nodePublicationElements.length > 0 && searchBoxDiv.length < 1) {
                     // Apply the sieve function to the children element.
                     // Set the content searchable under the DIVs having "node" class.
-                    $JQ(childDiv).sieve({ searchTemplate: searchTemplate, itemSelector: "div.node" });
+                    $JQ(childDiv).sieve({ searchTemplate: searchTemplate, itemSelector: "> div.node", textSelector: "> div.header div.title" });
 
                     // Set to stop immediate event propogation on keydown event.
                     // There are few keydown events (for example back space) associated with the publication tree control, So its to stop the event propagation.
