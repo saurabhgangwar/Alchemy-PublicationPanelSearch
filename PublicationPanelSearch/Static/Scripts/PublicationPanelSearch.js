@@ -2,9 +2,7 @@
     try{
         // Get the JQuery object.
         $JQ = Alchemy.library("jQuery");
-        // Add a event handler when Dashboard display is started.
-        $evt.addEventHandler($display, "start", onDashboardLoaded);
-
+        
         // Event handler function
         function onDashboardLoaded() {
             try{
@@ -69,6 +67,9 @@
                 $messages.registerError("Alchemy Publication Panel Search Plugin Error: ", error);
             }
         }
+
+        // Add a event handler when Dashboard display is started.
+        $evt.addEventHandler($display, "start", onDashboardLoaded);
     }
     catch (error) {
         $messages.registerError("Alchemy Publication Panel Search Plugin Error: ", error);
